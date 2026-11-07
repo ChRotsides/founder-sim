@@ -75,4 +75,4 @@ Built with Next.js, React, TypeScript, Tailwind CSS and the Anthropic SDK.
 
 Founder is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE): free for personal, research, education and other noncommercial use. It is source-available, not an OSI-approved open-source license.
 
-**Commercial use requires a separate license.** Contact Charalambos Rotsides at [lhampis@gmail.com](mailto:lhampis@gmail.com).
+**Commercial use requires a separate license.** Contact Charalambos Rotsides at [charalambosrotsides@gmail.com](mailto:charalambosrotsides@gmail.com) or [charalambosrotsides@outlook.com](mailto:charalambosrotsides@outlook.com).
