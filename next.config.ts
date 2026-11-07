@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Let phones on the home Wi-Fi load dev resources (npm run dev:phone).
+  allowedDevOrigins: ["192.168.*.*", "10.*.*.*", "*.local"],
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

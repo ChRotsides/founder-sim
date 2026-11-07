@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Personal working notes
+hand-off.md
+
+# Keep the example env file
+!.env.example

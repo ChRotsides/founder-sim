@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --paper: #f3f5f7;
+  --sheet: #ffffff;
+  --ink: #14213d;
+  --ink-2: #4a5671;
+  --ink-3: #8590a6;
+  --rule: #dde2ea;
+  --in: #1f7a5a;
+  --out: #b3261e;
+  --mark: #f2c14e;
+  --mark-soft: #fbedc4;
+  --accent: #2b4fd8;
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #0e1626;
+    --sheet: #16213a;
+    --ink: #e6eaf0;
+    --ink-2: #aab3c5;
+    --ink-3: #6f7a90;
+    --rule: #26324d;
+    --in: #4cc79a;
+    --out: #f2786d;
+    --mark: #f2c14e;
+    --mark-soft: #3a3320;
+    --accent: #8fa6ff;
+    color-scheme: dark;
   }
 }
 
+@theme inline {
+  --color-paper: var(--paper);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-in: var(--in);
+  --color-out: var(--out);
+  --color-mark: var(--mark);
+  --color-mark-soft: var(--mark-soft);
+  --color-accent: var(--accent);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+@keyframes flip {
+  0% { transform: translateY(-40%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.flip {
+  animation: flip 180ms ease-out;
+}
+@keyframes sheet-in {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.sheet-in {
+  animation: sheet-in 200ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flip, .sheet-in { animation: none; }
 }
